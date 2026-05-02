@@ -19,12 +19,8 @@ public class AlumnoControlador {
  
     void listarAlumnos() {
         System.out.println("LISTA DE ALUMNOS: ");
-        if (listaAlumnos.isEmpty()) {
-            System.out.println("  (No hay alumnos registrados)");
-        } else {
             for (Alumno a : listaAlumnos) {
                 a.verDatos();
             }
-        }
     }
 }
