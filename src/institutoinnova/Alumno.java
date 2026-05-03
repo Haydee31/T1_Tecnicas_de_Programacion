@@ -17,10 +17,10 @@ public class Alumno {
 
     public Alumno(String nombres, String tipoDocumento, String numeroDocumento, String nivelSocioeconomico, String tipobeca) {
         this.nombres = nombres;
-        this.tipoDocumento = tipoDocumento;
-        this.numeroDocumento = numeroDocumento;
-        this.nivelSocioeconomico = nivelSocioeconomico;
-        this.tipobeca = tipobeca;
+        setTipoDocumento(tipoDocumento);
+        setNumeroDocumento(numeroDocumento);
+        setNivelSocioeconomico(nivelSocioeconomico);
+        setTipobeca(tipobeca);
     }
     
     public String getNombres() {
@@ -77,12 +77,14 @@ public class Alumno {
     }
 
     public void setTipobeca(String tipobeca) {
-        if (tipobeca.equalsIgnoreCase("Sin Beca") ||
-            tipobeca.equalsIgnoreCase("Beca Parcial") ||
-            tipobeca.equalsIgnoreCase("Beca Total"))
-            this.tipobeca = tipobeca;
+        if (tipobeca.equalsIgnoreCase("Sin Beca"))
+        this.tipobeca = "Sin Beca";
+        else if (tipobeca.equalsIgnoreCase("Beca Parcial"))
+        this.tipobeca = "Beca Parcial";
+        else if (tipobeca.equalsIgnoreCase("Beca Total"))
+        this.tipobeca = "Beca Total";
         else
-            System.out.println(" La Beca debe ser 'Sin Beca', 'Beca Parcial' o 'Beca Total'");
+        System.out.println("La Beca debe ser 'Sin Beca', 'Beca Parcial' o 'Beca Total'");
     }
    
    public double calcularPensionBase() {
